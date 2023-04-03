@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const handleSubtract = () => {
+    setCount(count - 1);
+  };
+  const handleReset = () => {
+    setCount(0);
+  };
+  const handleAddition = () => {
+    setCount(count + 1);
+  };
+  let color = "#fff";
+  if(count >= 1){
+    color = "red";
+  }else 
+  if(count < 0){
+    color = "blue";
+  }else{
+    color = "black";
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section className='counter-section'>
+        <div className='container counter'>
+          <h1>React Counter App</h1>
+          <p>{count}</p>
+          <div className='button-sm'>
+            <button onClick={handleSubtract}>- Subtract</button>
+            <button onClick={handleReset}>Clear All</button>
+            <button onClick={handleAddition}>+ Addition</button>
+          </div>
+        </div>
+      </section>
     </div>
+
   );
+
 }
 
 export default App;

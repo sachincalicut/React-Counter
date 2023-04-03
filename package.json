@@ -1,5 +1,5 @@
 {
-  "name": "count-dec-inc-app",
+  "name": "Counter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
